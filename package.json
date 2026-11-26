@@ -10,7 +10,7 @@
     "status": "robutler app status"
   },
   "devDependencies": {
-    "webagents": "0.3.8"
+    "webagents": "0.3.10"
   },
   "engines": {
     "node": ">=22.0.0"
