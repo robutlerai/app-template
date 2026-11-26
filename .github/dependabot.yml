@@ -1,0 +1,11 @@
+# Keeps the two pins current: the CLI in package.json and the release workflow's version tag.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

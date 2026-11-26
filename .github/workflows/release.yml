@@ -1,0 +1,23 @@
+# Releases the app when a version tag is pushed (v1, v1.2.0).
+#
+# Set once: link this repository to the app (`robutler app link <owner>/<repo> --path app`), turn on
+# "Release from this repository's tags" in the app's source settings, and store a release token as the
+# repository secret ROBUTLER_RELEASE_TOKEN (`robutler app token create | gh secret set ROBUTLER_RELEASE_TOKEN`).
+# Replace app-id with your app's id, from `robutler app status`.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  release:
+    permissions:
+      contents: read
+    uses: robutlerai/app-ci/.github/workflows/release.yml@v1
+    with:
+      app-id: 00000000-0000-4000-8000-000000000000
+      environment: production
+      credential: token
+    secrets:
+      ROBUTLER_RELEASE_TOKEN: ${{ secrets.ROBUTLER_RELEASE_TOKEN }}

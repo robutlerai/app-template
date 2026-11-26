@@ -1,0 +1,13 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "description": "A counter that remembers its value for you.",
+  "_meta": {
+    "ui": {
+      "resourceUri": "./index.html",
+      "mimeType": "text/html",
+      "permissions": []
+    },
+    "robutler": { "v": 1 }
+  }
+}

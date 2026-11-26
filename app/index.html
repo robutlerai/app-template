@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My app</title>
+  <meta name="robutler:widget" content='{"title":"My app","description":"A counter that remembers its value for you.","size":{"width":360,"height":240},"kind":"iframe","version":"0.1.0","interface":{"commands":{"getState":{"description":"Read the current count.","returns":{"type":"object"}}}}}' />
+  <meta name="robutler:widget:icon" content="lucide:plus" />
+  <script src="/widgets/sdk.v2.js"></script>
+  <style>
+    html, body { margin: 0; height: 100%; font: 14px system-ui, -apple-system, sans-serif; }
+    main { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+    output { font-size: 48px; font-variant-numeric: tabular-nums; }
+    button { font: inherit; padding: 6px 14px; border-radius: 8px; border: 1px solid currentColor; background: none; color: inherit; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <output id="count">0</output>
+    <button id="add" type="button">Add one</button>
+  </main>
+  <script type="module">
+    import(new URL('./app.js?v=1', document.baseURI).href);
+  </script>
+</body>
+</html>
